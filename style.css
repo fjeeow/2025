@@ -18,6 +18,13 @@ h1 {
     z-index: -10;
     margin-top: 0%;
     display: block;
+            img {
+   height: 100%;
+    margin-top: 0%;
+    display: block;
+    top: 0%;
+    left: -50%;
+}
 }
 
 
