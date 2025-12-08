@@ -1,0 +1,70 @@
+*{
+  margin:0; padding:0; box-sizing:border-box;
+}
+html, body{
+  height:100%;
+}
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:;
+  overflow:hidden;
+}
+
+h1 {
+    position: absolute;
+    height: 100%;
+    z-index: -10;
+    margin-top: 0%;
+    display: block;
+}
+
+
+.container{
+  position:relative;
+  width:350px;
+  height:100%;
+  overflow:hidden;
+  background:;
+}
+
+.container::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:auto 100%; /* 세로 100%, 비율 고정, 옆 여백 그대로 */
+  z-index:0;
+}
+
+ul.boxes{
+  position:absolute;
+  left:0;
+  top:0;
+  width:350px;
+  display:flex;
+  flex-direction:column;
+  gap:800px;
+  padding:0;
+  z-index:1;
+
+  animation: scrollDown 40s linear forwards; 
+}
+
+ul.boxes li{
+  list-style:none;
+}
+
+ul.boxes li img{
+  width:350px;    /* 가로 고정 */
+  height:auto;    /* 세로는 비율 유지 */
+  display:block;
+  object-fit:contain; /* 비율 정확히 유지 */
+}
+
+@keyframes scrollDown{
+  from{ transform:translateY(-100%); }
+  to{ transform:translateY(100%); }
+}
