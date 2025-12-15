@@ -1,77 +1,93 @@
-*{
-  margin:0; padding:0; box-sizing:border-box;
-}
-html, body{
-  height:100%;
-}
-body{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:;
-  overflow:hidden;
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
-h1 {
-    position: absolute;
+
+body {
+    overflow: hidden;
+    margin: 0px;
     height: 100%;
-    z-index: -10;
+    background-color: white;
+}
+
+img {
+    position: absolute;
+    transform: translate(12.4%, 0%);
+    height: 100%;
     margin-top: 0%;
-    display: block;
-        img {
-   height: 100%;
-    margin-top: 0%;
-    display: block;
     top: 0%;
-    left: -50%;
-}
-}
-
-
-.container{
-  position:relative;
-  width:350px;
-  height:100%;
-  overflow:hidden;
-  background:;
+    display: block;
+    z-index: -10;
 }
 
-.container::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-repeat:no-repeat;
-  background-position:center center;
-  background-size:auto 100%; /* 세로 100%, 비율 고정, 옆 여백 그대로 */
-  z-index:0;
+.links a {
+  font-family: sans-serif;
+  font-size: 18pt;
+  color: red;
+  text-decoration: none;
+
+  white-space: nowrap;        /* 각 링크 내부 줄바꿈 방지 */
+  word-break: keep-all;       /* 한글 깨짐 방지 */
+
+  letter-spacing: 0px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
 }
 
-ul.boxes{
-  position:absolute;
-  left:0;
-  top:0;
-  width:350px;
-  display:flex;
-  flex-direction:column;
-  gap:800px;
-  padding:0;
-  z-index:1;
-
-  animation: scrollDown 40s linear forwards; 
+.links a:last-child {
+  margin-right: 0;
+}
+.links a:link,
+.links a:visited,
+.links a:hover {
+  color: red;
+  text-decoration: none;
+}
+.links a:active {
+  color: black;
+}
+.links a:nth-child(1) {
+  margin-right: 600px;
+}
+.links a:nth-child(2) {
+  margin-right: 100px;
 }
 
-ul.boxes li{
-  list-style:none;
+.links {
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-30%);
+
+  display: flex;              /* 핵심 */
+  flex-direction: row;
+  flex-wrap: nowrap;          /* 줄바꿈 금지 */
+  align-items: center;
+  justify-content: center;
+  gap: 0;                  /* 링크 간 간격 (margin 대신) */
+
+  white-space: nowrap;        /* 이중 안전장치 */
+  opacity: 1;
+
+  z-index: 999;
 }
 
-ul.boxes li img{
-  width:350px;    /* 가로 고정 */
-  height:auto;    /* 세로는 비율 유지 */
-  display:block;
-  object-fit:contain; /* 비율 정확히 유지 */
+@media screen and (max-width: 704px) {
+    
+img {
+   position: absolute;
+   line-height: 100%;
+   display: inline-block;
+   top: 0;
+   margin-right: auto;
+   margin-left: auto;
 }
 
-@keyframes scrollDown{
-  from{ transform:translateY(-100%); }
-  to{ transform:translateY(100%); }
+
+
+
 }
